@@ -1,0 +1,19 @@
+.top-buffer{
+    margin-top:10px;
+}
+
+.tableStructure tr td:nth-child(2){
+    width: 150px;
+}
+
+.tableStructure tr:nth-child(1) td{
+    border-top: none;
+}
+a.nodecoration{
+    text-decoration:none;
+}
+
+.form-group .col-sm-10 input{
+	width:300px;
+}
+

@@ -1,0 +1,35 @@
+body {
+  padding-top: 50px;
+}
+a {
+  color: #00B7FF;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+.taskForm{
+	width:500px;
+	margin:auto;
+}
+.input-group{
+	padding:10px;
+}
+.input-group-addon{
+	min-width:150px;
+}
+.dropdown-menu > li{
+	display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: normal;
+    line-height: 1.42857143;
+    color: #333;
+    white-space: nowrap;
+}
+.form-group .col-sm-10 input{
+  width:300px;
+}
+table thead tr th{
+    cursor:pointer;
+}

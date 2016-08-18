@@ -1,0 +1,66 @@
+<br/>
+<a ui-sref="newItem({name:'employee'})" class="btn-primary btn-lg nodecoration">Add New Employee</a>
+<span class="labelOption">Sort by</span>
+<select ng-options="item for item in sortField" ng-model="sortBy"></select>
+<span class="labelOption">Sorting Order</span>
+<select ng-options="item for item in [true,false]" ng-model="reverseSort"></select>
+<span class="labelOption">Group by</span>
+<select ng-options="item for item in groupField" ng-model="groupByField"></select>
+<span class="labelOption">View</span>
+<select ng-options="item for item in viewList" ng-model="view"></select>
+<h3>All Employee</h3>
+<span ng-show="groupByField ==='none'">
+	<table class="table employeeTable">
+	    <thead>
+	        <tr>
+	            <th ng-click="setSorting('name')">Name</th>
+	            <th ng-click="setSorting('dateofBirth')">Date of birth</th>
+	            <th ng-click="setSorting('dateofJoining')">Date of Joining</th>
+	            <th ng-click="setSorting('department')">Department</th>
+	            <th ng-click="setSorting('title')">Title</th>
+	            <th>View</th>
+	        </tr>
+	    </thead>
+	    <tbody>
+	        <tr ng-repeat="employee in employeeInstanceList | orderBy : sortBy : reverseSort ">
+	            <td>{{employee.name}}</td>
+	            <td>{{employee.dateofBirth}}</td>
+	            <td>{{employee.dateofJoining}}</td>
+	            <td>{{employee.department}}</td>
+	            <td>{{employee.title}}</td>
+	            <td>
+	                <a class="btn btn-primary" ui-sref="viewItem({name:'employee',id:employee.id})">View</a>
+	            </td>
+	        </tr>
+	    </tbody>
+	</table>
+</span>
+<span ng-show="groupByField !=='none'">
+	<ul ng-repeat="(key, value) in employeeInstanceList | groupBy: groupByField | orderBy : sortBy : reverseSort ">
+	  Group name: {{ key }}
+	  <li ng-repeat="employee in value">
+	    employee: {{ employee.name }} 
+	  </li>
+	</ul>
+</span>
+<script tpye="text/ng-template" id="view.html">
+	<div class="tableHeader" ng-show="view ==='details'">
+		<span class="headerLabel">Name</span>
+		<span class="headerLabel">Date of Birth</span>
+		<span class="headerLabel">Date of Joining</span>
+		<span class="headerLabel">Department</span>
+		<span class="headerLabel">Title</span>
+		<span class="headerLabel">View</span>
+	</div>
+	<div class="tableData" ng-repeat="employee in currentemployeeInstanceList | orderBy : sortBy : reverseSort ">
+		<span class="label" ng-show="view ==='card'">Name</span> : <span class="labelData">{{employee.name}}</span>
+		<span ng-show="view !=='list'">
+			<span class="label" ng-show="view ==='card'">Date of Birth</span> : <span class="labelData">{{employee.dateofBirth}}</span>
+			<span class="label" ng-show="view ==='card'">Date of Joining</span> : <span class="labelData">{{employee.dateofJoining}}</span>
+			<span class="label" ng-show="view ==='card'">Department</span> : <span class="labelData">{{employee.department}}</span>
+			<span class="label" ng-show="view ==='card'">Title</span> : <span class="labelData">{{employee.title}}</span>
+			<span class="label" ng-show="view ==='card'"></span> : <span class="labelData"><a class="btn btn-primary" ui-sref="viewItem({name:'employee',id:employee.id})">View</a></span>
+		</span>
+	</div>
+
+</script>
