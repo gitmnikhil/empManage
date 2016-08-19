@@ -1,12 +1,12 @@
 angular.module('employee').controller('employeeListController',function($scope,$state,$stateParams,Employee,$http){
     $scope.employeeInstanceList = Employee.query();
-    $scope.sortBy = "name";
-    $scope.sortField = ["name","dateofBirth","dateofJoining","department","title"];
-    $scope.groupField = ["none","name","dateofBirth","dateofJoining","department","title"];
+    $scope.sortField = ["name","department","title"];
+    $scope.groupField = ["none","department","title"];
     $scope.viewList = ["details","card","list"];
-    $scope.groupByField = "none";
-    $scope.view = "details";
-    $scope.reverseSort = true; 
+    $scope.sortBy = $scope.sortField[0];
+    $scope.groupByField = $scope.groupField[0];
+    $scope.view = $scope.viewList[0];
+    $scope.reverseSort = false; 
     $scope.setSorting = function(sortField){
         if($scope.sortBy === sortField){
             $scope.reverseSort = !$scope.reverseSort;
