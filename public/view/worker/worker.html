@@ -1,0 +1,20 @@
+<div class="container-fluid">
+	<h3>Worker List</h3>
+	<div id="tpl-content">
+		<div class="tableData" ng-repeat="worker in workerInstanceList">
+			<list-element/>
+		</div>
+	</div>
+	<div class="row" ng-show="flags.workerAvailable">
+		<h3>Assign Task to '{{selectedData.selectedWorker.name}}'</h3>
+		<div class="form-group">
+		    <label for="taskName">Task Name:</label>
+		    <input type="text" class="form-control" id="taskName" ng-model="formData.taskName">
+		</div>
+		<div class="form-group">
+		    <label for="taskSecond">Task Duration(in Seconds):</label>
+		    <input type="text" class="form-control" id="taskSecond" ng-model="formData.taskDuration">
+		</div>
+		 <button type="submit" ng-click="saveTask(selectedData.selectedWorker)" ng-disabled="formData.taskName==''" class="btn btn-primary">Assign Task</button>
+	</div>
+</div>

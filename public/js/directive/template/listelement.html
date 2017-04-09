@@ -1,0 +1,15 @@
+<div class="row element" ng-click ="selectEle()" ng-class ="worker.id === selectedData.selectedWorker.id?'selected':''">
+	<div class="col-xs-6 col-md-8">
+		<div class="row">
+			<strong>
+				{{worker.name}}
+			</strong>
+		</div>
+		<div class="row" ng-class="{{(worker.taskAssigned === '' || !worker.taskAssigned)}}">
+			{{(worker.taskAssigned === "" || !worker.taskAssigned)? "Available" :  worker.taskAssigned}}
+		</div>
+	</div>
+	<div class="col-xs-6 col-md-4">
+		{{worker.mobileNumber}}
+	</div>
+</div>

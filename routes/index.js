@@ -29,7 +29,7 @@ var routerfn = function(req, res, next,methodName) {
 		
 		return res;
 	}else{
-		res.render('index', { title: 'Employee Management System' });
+		res.render('index', { title: 'Cotton-o-Mill' });
 		return res;
 	}
 }
@@ -49,10 +49,15 @@ var routerfuncIdGet  = function(req, res, next) {
 	routerfn(req,res,next,"getInstance");
 }
 
+var routerfuncIdPut  = function(req, res, next) {
+	routerfn(req,res,next,"update");
+}
+
 //Restfull API
 router.get('/',routerfuncDefault);
 router.get('/:ctrl',routerfuncGet);
 router.post('/:ctrl',routerfuncPost);
 router.get('/:ctrl/:id',routerfuncIdGet);
+router.put('/:ctrl/:id',routerfuncIdPut);
 
 module.exports = router;

@@ -1,100 +1,20 @@
 body {
   padding-top: 50px;
+  background-color:#fff;
 }
 a {
   color: #00B7FF;
 }
-.starter-template {
-  padding: 40px 15px;
-  text-align: center;
-}
-.taskForm{
-	width:500px;
-	margin:auto;
-}
-.input-group{
+.row.element{
+	margin-left:0px;
+	margin-right:0px;
+	border:1px solid #000;
+	margin:5px;
 	padding:10px;
 }
-.input-group-addon{
-	min-width:150px;
+.row.element .col-xs-6.col-md-4{
+	text-align:right;
 }
-.dropdown-menu > li{
-	display: block;
-    padding: 3px 20px;
-    clear: both;
-    font-weight: normal;
-    line-height: 1.42857143;
-    color: #333;
-    white-space: nowrap;
-}
-.form-group .col-sm-10 input{
-  width:300px;
-}
-table thead tr th{
-    cursor:pointer;
-}
-.detailsviewLayout{
-  display: table;
-}
-.detailsviewLayout .tableHeader,.detailsviewLayout .tableData{
-  display: table-row;
-}
-.detailsviewLayout .headerLabel,.detailsviewLayout .labelcell{
-  display: table-cell;
-  padding:20px;
-}
-.cardviewLayout{
-}
-.cardviewLayout .tableData{
-  border:1px solid #808080;
-  margin:10px;
-}
-.cardviewLayout .tableHeader,.cardviewLayout .tableData{
-  float:left;
-  width:500px;
-  padding:5px;
-}
-.cardviewLayout .labelcell{
-  display: block;
-  padding:5px;
-  font-size:15px;
-}
-
-.cardviewLayout .labelcell .label{
-  font-weight:bold;
-  font-size:15px;
-  width:200px;
-  display: inline-block;
-  text-align:left;
-}
-.cardviewLayout .groupbyheader{
-  display: block;
-
-}
-.listviewLayout{
-}
-.listviewLayout .tableHeader,.listviewLayout .tableData{
-  display: list-item;
-}
-.listviewLayout .headerLabel,.listviewLayout .labelcell{
-  padding:20px;
-}
-h3{
-  padding-left:20px;
-}
-select{
-  width:100px;
-  height:35px;
-  border-radius:5px;
-  padding-left:5px;
-  text-transform: capitalize;
-}
-.labelOption{
-  padding-left:10px;
-}
-input[type='text']{
-  width:150px;
-  height:35px;
-  border-radius:5px;
-  padding-left:5px;
+.row.element.selected{
+	background-color: #e59985;
 }

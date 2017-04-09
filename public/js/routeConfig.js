@@ -1,5 +1,5 @@
-angular.module('employee',  ['ui.router','ngResource','angular.filter']);
-angular.module('employee').config(function($stateProvider,$httpProvider){
+angular.module('cottonomill',  ['ui.router','ngResource','angular.filter']);
+angular.module('cottonomill').config(function($stateProvider,$httpProvider){
     $stateProvider.state('ViewAll',{
         url:'/:name',
         templateUrl: function(params){

@@ -1,5 +1,6 @@
 <html>
 	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		<link rel="stylesheet" type="text/css" href="../css/bootstrap.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/bootstrap-theme.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/style.css"/>
@@ -15,23 +16,24 @@
 
 		<script type="text/javascript" src="../js/routeConfig.js"></script>
 
-		<script type="text/javascript" src="../js/services/employee.js"></script>
+		<script type="text/javascript" src="../js/services/worker.js"></script>
+		<script type="text/javascript" src="../js/directive/listElement.js"></script>
         
-        <script type="text/javascript" src="../js/controller/employee.js"></script>
+        <script type="text/javascript" src="../js/controller/worker.js"></script>
 		<title>{{title}}</title>
 	</head>
 	<body>
 		<nav class="navbar navbar-inverse navbar-fixed-top">
 		  <div class="container">
 			<div class="navbar-header">
-			  <a class="navbar-brand" href="#">Employee Management Application</a>
+			  <a class="navbar-brand" href="#">Cotton-o-Mill</a>
 			</div>
 		  </div>
 		</nav>
-		<div ng-app="employee">
+		<div ng-app="cottonomill">
 				<div id="navbar" class="collapse navbar-collapse">
 				  <ul class="nav navbar-nav">
-					<li><a href="#" ui-sref="ViewAll({name:'employee'})">Employee</a></li>
+					<li><a href="#" ui-sref="ViewAll({name:'worker'})">Worker</a></li>
 				  </ul>
 				</div>
 	  			{% block content %}{% endblock %}
